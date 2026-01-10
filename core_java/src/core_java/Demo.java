@@ -14,21 +14,25 @@ class Demo {
 //		int i1=(int)d1; //narrowing  //data loss
 //		System.out.println(i1);
 		
-		byte b1=5;
-		float b2=b1;
-		System.out.println(b2);
-		
-		float b3=3.0f;
-		int b4=(int) b3;
-		System.out.println(b4);
-		
-		char c='A';
-		int i=c;
-		System.out.println(i);
-		
-		int a=66;
-		char c1=(char)a;
-		System.out.println(c1);
+//		byte b1=5;
+//		float b2=b1;
+//		System.out.println(b2);
+//		
+//		float b3=3.0f;
+//		int b4=(int) b3;
+//		System.out.println(b4);
+//		
+//		char c='A';
+//		int i=c;
+//		System.out.println(i);
+//		
+//		int a=66;
+//		char c1=(char)a;
+//		System.out.println(c1);
+		int res='A'+'B';
+		System.out.println(res);
+		int res2='A'+1;
+		System.out.println(res2);
 		
 		
 	}
