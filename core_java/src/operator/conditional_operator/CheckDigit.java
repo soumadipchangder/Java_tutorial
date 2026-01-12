@@ -4,7 +4,7 @@ class CheckDigit {
 
     public static void main(String[] args) {
 
-        int n = 8;
+        int n = 78;
 
         int num = (n < 0) ? -n : n;
 
