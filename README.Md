@@ -148,10 +148,13 @@ User Input using Scanner
 Object Oriented Programming Basics
 
 ▶ How to Run the Programs
+
 ✅ Step 1: Compile
+
 javac FileName.java
 
 ✅ Step 2: Run
+
 java FileName
 
 
