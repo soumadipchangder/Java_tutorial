@@ -1,13 +1,16 @@
-☕ Java Tutorial & Practice Programs – Core Java Journey
+# ☕ Java Tutorial & Practice Programs – Core Java Journey
 
-Welcome to my Java-Tutorial Repository 👋
-This repository contains my complete Core Java learning journey, including daily practice programs, college assignments, and logic-building problems.
+Welcome to my **Java-Tutorial Repository** 👋  
+This repository contains my complete **Core Java learning journey**, including **daily practice programs, college assignments, and logic-building problems**.
 
-All programs are written in a simple and beginner-friendly way to clearly understand how Java works step by step.
+All programs are written in a **simple and beginner-friendly way** to clearly understand how Java works step by step.
 
-📌 What You’ll Find in This Repository
+---
 
-📂 Topics Covered
+## 📌 What You’ll Find in This Repository
+
+This repo is organized topic-wise and covers:
+
 ✅ Number Logic Programs
 
 Armstrong Number (3-digit & n-digit using methods)
