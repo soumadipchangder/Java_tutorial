@@ -1,5 +1,7 @@
 package methods;
 
+class Student {}
+
 public class Example {
 	int a1;
 	static int a2;
