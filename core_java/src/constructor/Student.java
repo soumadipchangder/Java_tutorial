@@ -7,7 +7,9 @@
 package constructor;
 
 public class Student {
+	@SuppressWarnings("unused")
 	int id;
+	@SuppressWarnings("unused")
 	String name;
 
 	public Student() {
@@ -15,9 +17,12 @@ public class Student {
 	}
 
 	public static void main(String[] args) {
-		new Student();
-		new Student();
-		new Student();
+		@SuppressWarnings("unused")
+		Student s1 = new Student();
+		@SuppressWarnings("unused")
+		Student s2 = new Student();
+		@SuppressWarnings("unused")
+		Student s3 = new Student();
 
 	}
 
