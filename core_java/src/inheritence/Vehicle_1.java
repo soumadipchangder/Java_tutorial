@@ -10,7 +10,7 @@ public class Vehicle_1 {
         Bike1 b = new Bike1("Black", "Ducati Superleggera V4", 15000000);
         b.printBike();
         System.out.println("\nCar details:\n");
-        Car c = new Car("Black", "Rolls-Royce Phantom", 120000000);
+        Car1 c = new Car1("Black", "Rolls-Royce Phantom", 120000000);
         c.printCar();
     }
 }
@@ -28,10 +28,10 @@ class Bike1 extends Vehicle_1 {
         System.out.println("Price: " + price);
     }
 }
-class Car extends Vehicle_1 {
+class Car1 extends Vehicle_1 {
     String brand;
     long price;
-    Car(String color, String brand, long price) {
+    Car1(String color, String brand, long price) {
         this.color = color;
         this.brand = brand;
         this.price = price;
