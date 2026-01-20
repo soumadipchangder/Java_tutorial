@@ -1,0 +1,16 @@
+package array1d;
+
+public class StudentDriver {
+	public static void main(String[] args) {
+		Student[] students=new Student[3];
+		students[0]=new Student(18,"Virat");
+		students[1]=new Student(45,"Rohit");
+		students[2]=new Student(7,"Dhoni");
+		
+	for (int i=0;i<students.length;i++) {
+		System.out.println(students[i].id);
+		System.out.println(students[i].name);
+	}
+	}
+
+}
