@@ -47,9 +47,6 @@ public class EmployeeServiceImp implements EmployeeService {
         return top;
     }
 
-    // ---------------- ASSIGNMENT METHODS ----------------
-
-    // 1. Experienced Employees
     @Override
     public Employee[] getExperiencedEmployees(Employee[] employees, int minYears) {
 
@@ -72,7 +69,6 @@ public class EmployeeServiceImp implements EmployeeService {
         return result;
     }
 
-    // 2. Top Paid Employee by Department
     @Override
     public Employee getTopPaidEmployeeByDepartment(Employee[] employees, String department) {
 
@@ -89,7 +85,6 @@ public class EmployeeServiceImp implements EmployeeService {
         return top;
     }
 
-    // 3. Average Salary by Department
     @Override
     public double getAverageSalaryByDepartment(Employee[] employees, String department) {
 

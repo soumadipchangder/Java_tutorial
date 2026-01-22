@@ -8,7 +8,6 @@ interface EmployeeService {
 
     Employee getTopPaidEmployee(Employee[] employees);
 
-    // assignment
     Employee[] getExperiencedEmployees(Employee[] employees, int minYears);
 
     Employee getTopPaidEmployeeByDepartment(Employee[] employees, String department);
