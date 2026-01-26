@@ -38,6 +38,7 @@ public class Student1 {
 
             students[i] = new Student1(id, name, marks);
         }
+        sc.close();
 
         return students;
     }
