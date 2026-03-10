@@ -1,0 +1,39 @@
+pipeline {
+    agent any
+
+    environment {
+        // Specify any environment variables if needed
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // pull code from repository
+                checkout scm
+            }
+        }
+        stage('Build') {
+            steps {
+                sh 'mvn clean package'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'mvn test'
+            }
+        }
+    }
+
+    post {
+        always {
+            junit '**/target/surefire-reports/*.xml'
+            archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
+        }
+        success {
+            echo 'Build finished successfully.'
+        }
+        failure {
+            echo 'Build failed.'
+        }
+    }
+}
