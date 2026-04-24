@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class StudentDetailsInsert {
 	public static void main(String[] args) {
-		Scanner sc=new Scanner(System.in);
+		try (Scanner sc=new Scanner(System.in)) {
 		System.out.println("Enter Student name");
 		String name=sc.nextLine();
 		sc.nextLine();
@@ -54,7 +54,7 @@ public class StudentDetailsInsert {
 		preparedStatement.setString(4,dept);
 		preparedStatement.setString(5,email);
 		preparedStatement.setString(6,gender);
-		preparedStatement.setString(7,date);
+		preparedStatement.setDate(7,dob);
 		preparedStatement.setLong(8,mobileNo);
 		System.out.println("After setting values "+preparedStatement);
 		System.out.println("Platform created successful!!");
@@ -69,10 +69,9 @@ public class StudentDetailsInsert {
 			System.out.println("Data inserted un-successfully!!");
 		}
 		
-		} catch(ClassNotFoundException e) {
-			e.printStackTrace();
-		} catch (SQLException e) {
-			e.printStackTrace();
+		} catch (ClassNotFoundException | SQLException e) {
+			System.out.println("Database operation failed: " + e.getMessage());
+		}
 		}
 	}
 }

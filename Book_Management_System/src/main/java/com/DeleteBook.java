@@ -1,13 +1,18 @@
 package com;
 
 import java.util.Scanner;
-import javax.persistence.*;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
 
 public class DeleteBook {
 
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
+        try (Scanner sc = new Scanner(System.in)) {
 
         EntityManagerFactory emf =
         Persistence.createEntityManagerFactory("databaseproperties");
@@ -36,5 +41,7 @@ public class DeleteBook {
         et.commit();
 
         em.close();
+        emf.close();
+        }
     }
 }

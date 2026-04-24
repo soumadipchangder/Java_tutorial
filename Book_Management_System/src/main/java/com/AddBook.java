@@ -1,13 +1,17 @@
 package com;
 
 import java.util.Scanner;
-import javax.persistence.*;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
 
 public class AddBook {
 
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
+        try (Scanner sc = new Scanner(System.in)) {
 
         EntityManagerFactory emf =
         Persistence.createEntityManagerFactory("databaseproperties");
@@ -33,5 +37,7 @@ public class AddBook {
         System.out.println("Book Added Successfully");
 
         em.close();
+        emf.close();
+        }
     }
 }

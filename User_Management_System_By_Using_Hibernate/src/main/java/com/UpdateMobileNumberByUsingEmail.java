@@ -1,9 +1,15 @@
 package com;
-import java.util.*;
-import javax.persistence.*;
+import java.util.Scanner;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
 
 public class UpdateMobileNumberByUsingEmail {
 
+	@SuppressWarnings("resource")
 	public static void main(String[] args) {
 		Scanner sc=new Scanner(System.in);
 		
@@ -33,6 +39,7 @@ public class UpdateMobileNumberByUsingEmail {
 		}
 		et.commit();
 		em.close();
+		emf.close();
 
 	}
 

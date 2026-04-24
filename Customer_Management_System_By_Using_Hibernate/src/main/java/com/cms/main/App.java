@@ -2,7 +2,6 @@ package com.cms.main;
 
 import java.util.Scanner;
 
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.cms.config.AppConfig;
@@ -14,11 +13,10 @@ public class App {
 
 	public static void main(String[] args) {
 
-		ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+		try (AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+				Scanner sc = new Scanner(System.in)) {
 
 		CustomerDao dao = context.getBean(CustomerDao.class);
-
-		Scanner sc = new Scanner(System.in);
 
 		System.out.println("1 Add Customer");
 		System.out.println("2 View Customers");
@@ -82,7 +80,7 @@ public class App {
 
 		}
 
-		sc.close();
+		}
 
 	}
 

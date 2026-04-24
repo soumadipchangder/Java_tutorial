@@ -16,10 +16,7 @@ public class EmployeeDAO {
 	/*In this class we need to Insert Update Delete select in the Employee Table*/
 	
 	public void insertEmployeeDetails(EmployeeDetailsEntity employeeDetailsEntity){
-		
-		EmployeeDetailsEntity emDetailsEntity=
-				employeeRepository.save(employeeDetailsEntity);
-		
+		employeeRepository.save(employeeDetailsEntity);
 	}
 	
 	public List<EmployeeDetailsEntity> getAllEmployeeDetails() {

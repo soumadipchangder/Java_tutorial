@@ -1,13 +1,18 @@
 package com;
 
-import java.util.*;
-import javax.persistence.*;
+import java.util.Scanner;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.NoResultException;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
 
 public class DisplayUserByEmail {
 
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
+        try (Scanner sc = new Scanner(System.in)) {
 
         String fetch = "select user from UserInformation user where user.email=?1";
 
@@ -39,6 +44,8 @@ public class DisplayUserByEmail {
         }
 
         em.close();
+        emf.close();
+        }
         
     }
 }

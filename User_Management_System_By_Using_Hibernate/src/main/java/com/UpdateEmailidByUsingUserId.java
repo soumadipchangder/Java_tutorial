@@ -1,12 +1,15 @@
 package com;
 import java.util.Scanner;
 
-import javax.persistence.*;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
 
 public class UpdateEmailidByUsingUserId {
 
 	public static void main(String[] args) {
-		Scanner sc=new Scanner(System.in);
+		try (Scanner sc=new Scanner(System.in)) {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("databaseproperties");
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction et = em.getTransaction();
@@ -24,6 +27,8 @@ public class UpdateEmailidByUsingUserId {
 		et.commit();
 		
 		em.close();
+		emf.close();
+		}
 		
 
 	}

@@ -12,5 +12,6 @@ public class App
     public static void main( String[] args )
     {
     	EntityManagerFactory factory = Persistence.createEntityManagerFactory("User_Management_System_By_Using_Hibernate");
+    	factory.close();
     }
 }

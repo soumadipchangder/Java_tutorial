@@ -1,8 +1,13 @@
 package com;
 import java.util.Scanner;
-import javax.persistence.*;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
 
 public class InsertUserDetails {
+	@SuppressWarnings("resource")
 	public static void main(String[] args) {
 		Scanner sc =new Scanner(System.in);
 		/* 1) Load the Persistence.xml file */
@@ -48,6 +53,7 @@ public class InsertUserDetails {
 		/* 7) Close Connection */
 		
 		em.close();
+		emf.close();
 		
 		
 	}

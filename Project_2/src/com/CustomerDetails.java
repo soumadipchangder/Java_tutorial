@@ -5,6 +5,30 @@ public class CustomerDetails {
 	private String name;
 	private long mobilenumber;
 	private String emailid;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public long getMobilenumber() {
+		return mobilenumber;
+	}
+
+	public String getEmailid() {
+		return emailid;
+	}
 	
 	public void validateMobileNumber(long mobilenumber) {
 		

@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class StepsOfJDBC {
 	public static void main(String[] args) {
-		Scanner sc=new Scanner(System.in);
+		try (Scanner sc=new Scanner(System.in)) {
 		System.out.println("Enter employee id");
 		int id=sc.nextInt();
 		System.out.println("Enter employee name:");
@@ -54,10 +54,9 @@ public class StepsOfJDBC {
 			System.out.println("Data inserted un-successfully!!");
 		}
 		
-		} catch(ClassNotFoundException e) {
-			e.printStackTrace();
-		} catch (SQLException e) {
-			e.printStackTrace();
+		} catch (ClassNotFoundException | SQLException e) {
+			System.out.println("Database operation failed: " + e.getMessage());
+		}
 		}
 	}
 }

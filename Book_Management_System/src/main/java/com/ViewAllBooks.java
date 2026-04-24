@@ -1,7 +1,11 @@
 package com;
 
-import java.util.*;
-import javax.persistence.*;
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.TypedQuery;
 
 public class ViewAllBooks {
 
@@ -12,7 +16,7 @@ public class ViewAllBooks {
 
         EntityManager em = emf.createEntityManager();
 
-        Query query = em.createQuery("select b from Book b");
+        TypedQuery<Book> query = em.createQuery("select b from Book b", Book.class);
 
         List<Book> list = query.getResultList();
 
@@ -27,5 +31,6 @@ public class ViewAllBooks {
         }
 
         em.close();
+        emf.close();
     }
 }

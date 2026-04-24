@@ -34,10 +34,8 @@ public class DatabaseConnections {
             Class.forName(driverClassName);
             return DriverManager.getConnection(url, username, password);
         } 
-        catch(Exception e) {
-            e.printStackTrace();
+        catch (ClassNotFoundException | SQLException e) {
+            throw new IllegalStateException("Unable to establish MySQL connection", e);
         }
-
-        return null;
     }
 }

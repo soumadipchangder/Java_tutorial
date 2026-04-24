@@ -12,5 +12,6 @@ public class App
     public static void main( String[] args )
     {
     	EntityManagerFactory factory = Persistence.createEntityManagerFactory("Customer_Management_System");
+    	factory.close();
     }
 }

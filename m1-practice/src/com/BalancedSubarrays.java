@@ -1,7 +1,5 @@
 package com;
 
-import java.util.*;
-
 public class BalancedSubarrays {
 
     public static int countBalanced(int[] arr) {

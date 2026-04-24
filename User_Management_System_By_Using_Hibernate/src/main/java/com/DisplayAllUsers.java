@@ -1,7 +1,11 @@
 package com;
 
-import java.util.*;
-import javax.persistence.*;
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.TypedQuery;
 
 public class DisplayAllUsers {
 
@@ -14,11 +18,11 @@ public class DisplayAllUsers {
 
         EntityManager em = emf.createEntityManager();
 
-        Query query = em.createQuery(fetch);
+        TypedQuery<UserInformation> query = em.createQuery(fetch, UserInformation.class);
 
         List<UserInformation> users = query.getResultList();
 
-        if(users.size() > 0) {
+        if(!users.isEmpty()) {
 
             for(UserInformation u : users) {
 
@@ -35,5 +39,6 @@ public class DisplayAllUsers {
         }
 
         em.close();
+        emf.close();
     }
 }
