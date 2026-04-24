@@ -1,39 +1,47 @@
 pipeline {
     agent any
 
-    environment {
-        // Specify any environment variables if needed
+    tools {
+        maven 'Maven'
+        jdk 'JDK 25'
     }
 
     stages {
+
         stage('Checkout') {
             steps {
-                // pull code from repository
-                checkout scm
+                git branch: 'main', url: 'https://github.com/soumadipchangder/Jenkins_1stproject'
             }
         }
+
         stage('Build') {
             steps {
-                sh 'mvn clean package'
+                sh 'mvn clean compile'
             }
         }
-        stage('Test') {
+
+        stage('Run JUnit Tests') {
             steps {
                 sh 'mvn test'
             }
         }
+
+        stage('SonarQube Analysis') {
+            steps {
+                withSonarQubeEnv('SonarServer') {
+                    sh 'mvn sonar:sonar'
+                }
+            }
+        }
+
     }
 
     post {
-        always {
-            junit '**/target/surefire-reports/*.xml'
-            archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
-        }
         success {
-            echo 'Build finished successfully.'
+            echo 'Pipeline executed successfully!'
         }
         failure {
-            echo 'Build failed.'
+            echo 'Pipeline failed. Please check the logs.'
         }
     }
 }

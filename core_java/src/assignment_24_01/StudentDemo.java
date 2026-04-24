@@ -23,11 +23,11 @@ public class StudentDemo {
 
         List<Student> list = new ArrayList<>();
 
-        list.add(new Student(1, "Rahul", 75));
-        list.add(new Student(2, "Amit", 35));
+        list.add(new Student(1, "Dinga", 75));
+        list.add(new Student(2, "Dingi", 35));
         list.add(new Student(3, "Neha", 88));
-        list.add(new Student(4, "Pooja", 60));
-        list.add(new Student(5, "Ravi", 30));
+        list.add(new Student(4, "Dungi", 60));
+        list.add(new Student(5, "Dunga", 30));
 
         System.out.println("---- All Students ----");
         for (Student s : list) {
